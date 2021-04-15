@@ -10,11 +10,9 @@ app.use(express.json({ extended: true }))
 app.use('/api/auth', require('./routes/auth.route'))
 app.use('/api/todo', require('./routes/todo.route'))
 
-console.log('Hello')
-
 async function start() {
 	try {
-		await mongoose.connect('mongodb+srv://tony:12345@cluster0.mxymm.azure.mongodb.net/todo?retryWrites=true&w=majority', {
+		await mongoose.connect('mongodb+srv://tony:<password>@cluster0.mxymm.azure.mongodb.net/todo?retryWrites=true&w=majority', {
 			useCreateIndex: true,
 			useFindAndModify: true,
 			useNewUrlParser: true,
